@@ -20,7 +20,7 @@ class ControllerTest {
         Document completeWebsiteText = controller.getConnection("https://www.gutenberg.org/files/1065/1065-h/1065-h.htm");
         Elements scrappedPoem = completeWebsiteText.getElementsByClass("chapter");
 
-        assertNotEquals(completeWebsiteText, scrappedPoem);
+        assertNotEquals(completeWebsiteText.toString(), scrappedPoem.toString());
     }
 
 } // End of ControllerTest
