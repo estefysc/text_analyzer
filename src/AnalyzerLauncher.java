@@ -29,7 +29,6 @@ public class AnalyzerLauncher extends Application {
         } catch(Exception e) {
             e.printStackTrace();
         }
-
     } // End of start
 
     public static void main(String[] args) {

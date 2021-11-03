@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffd3c9b9-69b9-4911-91b5-1c985cd1b18b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ResultsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resultsWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/text_analyzer/AnalyzerLauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/text_analyzer/AnalyzerLauncher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/text_analyzer/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/text_analyzer/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/text_analyzer/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/text_analyzer/gui.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AnalyzerLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AnalyzerLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_analyzer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/text_analyzer.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +24,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -32,7 +39,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last.edited.regexp" value="Once upon a midnight dreary, while I pondered, weak and sand" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -41,12 +55,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\estef\OneDrive\Software Development\Software Development 1 Class\Projects\text_analyzer\src" />
       <recent name="C:\Users\estef\OneDrive\Software Development\Software Development 1 Class\Projects\text_analyzer\src\sample" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ControllerTest">
     <configuration name="AnalyzerLauncher" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <option name="MAIN_CLASS_NAME" value="AnalyzerLauncher" />
@@ -55,6 +75,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="text_analyzer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest.getConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="text_analyzer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ControllerTest" />
+      <option name="METHOD_NAME" value="getConnection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest.scrapPoem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="text_analyzer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ControllerTest" />
+      <option name="METHOD_NAME" value="scrapPoem" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ControllerTest" />
+        <item itemvalue="JUnit.ControllerTest.getConnection" />
+        <item itemvalue="JUnit.ControllerTest.scrapPoem" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -90,6 +146,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="411" y="44" width="1092" height="768" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635273139277" />
+    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1635898749586">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="765" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1635898749586" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1635824253929">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635824253929" />
     <state x="640" y="179" key="#com.intellij.unscramble.UnscrambleDialog" timestamp="1635274057379">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -106,22 +170,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1635273134407" />
-    <state width="1877" height="323" key="GridCell.Tab.0.bottom" timestamp="1635294223952">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="346" key="GridCell.Tab.0.bottom" timestamp="1635967086579">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="323" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635294223952" />
-    <state width="1877" height="323" key="GridCell.Tab.0.center" timestamp="1635294223952">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="346" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1635967086579" />
+    <state width="1877" height="350" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635825392393" />
+    <state width="1877" height="346" key="GridCell.Tab.0.center" timestamp="1635967086579">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="323" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635294223952" />
-    <state width="1877" height="323" key="GridCell.Tab.0.left" timestamp="1635294223952">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="346" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1635967086579" />
+    <state width="1877" height="350" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635825392393" />
+    <state width="1877" height="346" key="GridCell.Tab.0.left" timestamp="1635967086579">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="323" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635294223952" />
-    <state width="1877" height="323" key="GridCell.Tab.0.right" timestamp="1635294223952">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="346" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1635967086579" />
+    <state width="1877" height="350" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635825392393" />
+    <state width="1877" height="346" key="GridCell.Tab.0.right" timestamp="1635967086579">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="323" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635294223952" />
+    <state width="1877" height="346" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1635967086579" />
+    <state width="1877" height="350" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635825392393" />
     <state width="1877" height="323" key="GridCell.Tab.1.bottom" timestamp="1635294223952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -150,10 +218,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1632320689091" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1635348017470">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="656" y="340" key="com.intellij.ide.util.TipDialog" timestamp="1635957980484">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635348017470" />
+    <state x="656" y="340" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1635957980484" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635814499062" />
+    <state x="665" y="408" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1635958771280">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="665" y="408" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1032@0.0.1920.1032" timestamp="1635958771280" />
+    <state x="731" y="218" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1635964618455">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="731" y="218" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1635964618455" />
     <state x="342" y="140" key="new project wizard" timestamp="1634339820322">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

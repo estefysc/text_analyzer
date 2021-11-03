@@ -1,4 +1,10 @@
-import javafx.scene.control.Button;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -7,22 +13,23 @@ import java.io.IOException;
 import java.util.*;
 
 public class Controller {
-    static Document doc;
+    String url = "https://www.gutenberg.org/files/1065/1065-h/1065-h.htm";
 
-    public void countWords() {
-        ArrayList<String> checkedWords = new ArrayList<String>();
-        HashMap<String, Integer> results = new HashMap<String, Integer>();
-        Elements htmlPoem = null;
-
+    // Creates a new connection session with the URL.
+    public Document getConnection(String website) {
+        Document doc = null;
         try {
-            doc = Jsoup.connect("https://www.gutenberg.org/files/1065/1065-h/1065-h.htm").get();       // Creates a new connection session with the URL.
+            doc = Jsoup.connect(website).get();
         } catch(IOException e) {
             String errorMessage = "Connection to URL failed";
             System.out.println(errorMessage);
             e.printStackTrace();
         } // End of connection try/catch
+        return doc;
+    } // End of getConnection method
 
-        // 1) Select all paragraphs with the class = poem to extract the poem.
+    public Elements scrapPoem(Document doc) {
+        Elements htmlPoem = null;
         try {
             htmlPoem = doc.getElementsByClass("chapter");                                          // Scraps for all elements with classname "poem". Includes HTML tags.
             if(htmlPoem.isEmpty()) {
@@ -33,12 +40,21 @@ public class Controller {
             System.out.println(error);
             System.exit(-1);
         } // End of scrapper try/catch
+        return htmlPoem;
+    } // End of scrapPoem method
 
-        String noTagsPoem = htmlPoem.text();                                                                    // Removes the HTML tags from the text.
+    public String removeTagsAndPunctuation(Elements scrappedPoem) {
+        String noTagsPoem = scrappedPoem.text();                                                                // Removes the HTML tags from the text.
         String lwrCaseNoTagsPoem = noTagsPoem.toLowerCase();
-
         String noPunctuationPoem = lwrCaseNoTagsPoem.replaceAll("[\\p{Punct}\\“\\”\\—]", "");   // Removes punctuation signs.
-        String[] arrWords = noPunctuationPoem.split("[\\s+]");                                            // Splits the string into words.
+        return noPunctuationPoem;
+    } // End of removeTagsAndPunctuation method
+
+    public List countWords(String text) {
+        ArrayList<String> checkedWords = new ArrayList<String>();
+        HashMap<String, Integer> results = new HashMap<String, Integer>();
+
+        String[] arrWords = text.split("[\\s+]");
 
         //  2) Check each word against all the others to know how many times it appears.
         for(int i = 0; i < arrWords.length; i++) {                                                             // i = first word to be compared
@@ -68,8 +84,41 @@ public class Controller {
         // 3) Sort all words by the most frequent.
         List<Map.Entry<String, Integer>> sortedResults = new ArrayList<>(results.entrySet());
         sortedResults.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));
-        sortedResults.forEach(System.out::println);
-    } // End of countWords
+//        sortedResults.forEach(System.out::println);
+        return sortedResults;
+    } // End of countWords method
+
+    @FXML
+    private void sendInfo() throws IOException {
+        // Executes all the logic of scrapping and counting the words
+        Document doc = getConnection(url);
+        Elements poem = scrapPoem(doc);
+        String cleanText = removeTagsAndPunctuation(poem);
+        List finalResults = countWords(cleanText);
+
+        // Loads second window
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("resultsWindow.fxml"));
+        Parent root = loader.load();
+
+        // Get controller instance
+        ResultsController secondController = loader.getController();
+
+        // Pass data to controller
+        secondController.setResultsArea(finalResults);
+
+        // Show second scene in new stage
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Results");
+        stage.show();
+    }
+
+
+
+
+
+
+
 } // End of controller
 
 
